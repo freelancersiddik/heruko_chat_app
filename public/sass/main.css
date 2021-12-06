@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  font-family: "PT Sans", sans-serif;
+  font-size: 62.5%;
+}
+
+main {
+  width: 75vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main header {
+  background: #888;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0.5rem 2rem;
+}
+
+main header div.logo_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main header div.logo_box img {
+  -webkit-animation: logo_img 2s infinite linear;
+          animation: logo_img 2s infinite linear;
+}
+
+@-webkit-keyframes logo_img {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes logo_img {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+main header div.logo_box h1 {
+  margin-left: 0.5rem;
+}
+
+main header button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+}
+
+main section {
+  padding: 1.6rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main section div.user_window {
+  width: 300px;
+  background: #2eb67d;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+main section div.user_window div.user_count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 1.5rem;
+}
+
+main section div.user_window div.user_count h3 {
+  font-size: 2rem;
+}
+
+main section div.user_window div.user_count p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+main section div.user_window div.user_list p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+main section div.chat_window {
+  width: 600px;
+  background: #2eb67d;
+  border-radius: 10px;
+  margin-left: 2rem;
+}
+
+main section div.chat_window div.chats {
+  height: 65vh;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+}
+
+main section div.chat_window div.chats div.join_user {
+  background: #eeeeee;
+  padding: 0.4rem 0.3rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 56px;
+  margin: 1rem auto;
+}
+
+main section div.chat_window div.chats div.message {
+  position: relative;
+  width: 250px;
+  background: #36c5f0;
+  margin-bottom: 1rem;
+  padding: 0.3rem 1.5rem;
+  border-radius: 50px 50px 50px 50px;
+  font-family: "Open Sans", sans-serif;
+}
+
+main section div.chat_window div.chats div.outgoing {
+  text-align: end;
+  background: #888;
+  margin-left: auto;
+}
+
+main section div.chat_window div.message_box {
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main section div.chat_window div.message_box input {
+  width: 100%;
+  outline: none;
+  padding: 1rem 1.5rem;
+  border: none;
+  font-size: 1.4rem;
+  word-spacing: .4rem;
+}
+
+main section div.chat_window div.message_box ::-webkit-input-placeholder {
+  color: #8d8686;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 0;
+  font-size: 1.4rem;
+}
+
+main section div.chat_window div.message_box :-ms-input-placeholder {
+  color: #8d8686;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 0;
+  font-size: 1.4rem;
+}
+
+main section div.chat_window div.message_box ::-ms-input-placeholder {
+  color: #8d8686;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 0;
+  font-size: 1.4rem;
+}
+
+main section div.chat_window div.message_box ::placeholder {
+  color: #8d8686;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 0;
+  font-size: 1.4rem;
+}
+
+main section div.chat_window div.message_box button {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 0.6rem 2rem;
+  background: #36c5f0;
+  color: #eeeeee;
+  border-radius: 0 2rem 2rem 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 90%;
+  }
+  main header button {
+    display: block;
+  }
+  main section {
+    padding: 0;
+    position: relative;
+  }
+  main section div.user_window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 98%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    z-index: 10000;
+    -webkit-box-shadow: 0 3px 3px 0 rgba(97, 95, 95, 0.864);
+            box-shadow: 0 3px 3px 0 rgba(97, 95, 95, 0.864);
+    margin: 0 auto;
+    display: none;
+    border-radius: none;
+  }
+  main section div.chat_window {
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    margin-left: 0;
+  }
+  main section div.chat_window div.message {
+    max-width: 20rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

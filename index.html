@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat application</title>
+    <link rel="stylesheet" href="sass/main.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="logo_box">
+                <figure>
+                    <img src="image/logo.svg" height="50" alt="">
+                </figure>
+                <h1><span>C</span>hat<span>B</span>ot</h1>
+            </div>
+            <button type="button" id="bars_click_btn">
+                <img src="image/button.svg" height="50" alt="">
+            </button>
+        </header>
+        <section>
+            <div class="user_window">
+                <div class="user_count">
+                    <h3>People</h3>
+                    <p class="totol_user">0</p>
+                </div>
+                <div class="user_list">
+                    <p>Siddik</p>
+                    <p>Khan</p>
+                    <p>Pro</p>
+                    <p>Vai</p>
+                </div>
+            </div>
+            <div class="chat_window">
+                <div class="chats">
+                    <!-- <div class="join_user">
+                        <p><b>Siddik</b> Joined the chat</p>
+                    </div> -->
+                    <!-- <div class="message incoming">
+                        <p><b>Siddik</b></p>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="message outgoing">
+                        <p><b>Khan</b></p>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="message incoming">
+                        <p><b>Siddik</b></p>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div> -->
+
+
+                </div>
+                <!-- <div class=""> -->
+                <div class="message_box">
+                    <input type="text" id="user_msg" placeholder="Enter Your Message">
+                    <button id="send_msg" type="button">Send</button>
+                </div>
+                <!-- </div> -->
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        const icon = document.querySelector("#bars_click_btn")
+        icon.addEventListener("click", () => {
+            const user_window = document.querySelector(".user_window")
+            if (user_window.style.display == "block") {
+                user_window.style.display = "none"
+            } else {
+                user_window.style.display = "block"
+
+            }
+        })
+    </script>
+    <!-- script file -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/client.js"></script>
+</body>
+
+</html>

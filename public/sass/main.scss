@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+// color
+$primary: #2eb67d;
+$scoundry: #36c5f0;
+$text: #eeeeee;
+$header: #888;
+// font
+$primary_font: "Open Sans", sans-serif;
+$text_font: "PT Sans", sans-serif;
+// sizing
+$h1: 3rem;
+$h2: 2.5rem;
+$h3: 2rem;
+$h4: 1.8rem;
+$h5: 1.4rem;
+$p: 1rem;
+
+// minxing
+@mixin flexing($jc, $ai, $fd) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+html {
+    font-family: $text_font;
+    font-size: 62.5%;
+}
+
+main {
+    width: 75vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //     ==========     header    =========
+    header {
+        background: $header;
+        @include flexing(space-between, stretch, row);
+        padding: 0.5rem 2rem;
+        div.logo_box {
+            img {
+                animation: logo_img 2s infinite linear;
+            }
+            @keyframes logo_img {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            @include flexing(space-between, center, row);
+            h1 {
+                margin-left: 0.5rem;
+            }
+        }
+        button {
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: none;
+        }
+    }
+
+    //     ==========     section    =========
+    section {
+        padding: 1.6rem 2rem;
+        @include flexing(space-between, stretch, row);
+        div.user_window {
+            width: 300px;
+            background: $primary;
+            padding: 1rem;
+            border-radius: 10px;
+
+            div.user_count {
+                @include flexing(space-around, center, row);
+                margin-bottom: 1.5rem;
+                h3 {
+                    font-size: $h3;
+                }
+                p {
+                    font-size: $h3;
+                    font-weight: bold;
+                }
+            }
+            div.user_list {
+                p {
+                    font-size: $h5;
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        div.chat_window {
+            width: 600px;
+            background: $primary;
+            border-radius: 10px;
+            margin-left: 2rem;
+            div.chats {
+                height: 65vh;
+                padding: 1rem 2rem;
+                overflow-y: auto;
+                div.join_user {
+                    background: $text;
+                    padding: 0.4rem 0.3rem;
+                    width: max-content;
+                    margin: 0 auto;
+                    border-radius: 56px;
+                    margin: 1rem auto;
+                }
+                div.message {
+                    position: relative;
+                    width: 250px;
+                    background: $scoundry;
+                    margin-bottom: 1rem;
+                    padding: 0.3rem 1.5rem;
+                    border-radius: 50px 50px 50px 50px;
+                    font-family: $primary_font;
+                }
+                div.outgoing {
+                    text-align: end;
+                    background: $header;
+                    margin-left: auto;
+                }
+            }
+            div.message_box {
+                padding: 0 1rem;
+                padding-bottom: 1rem;
+                @include flexing(space-between, stretch, row);
+                input {
+                    width: 100%;
+                    outline: none;
+                    padding: 1rem 1.5rem;
+                    border: none;
+                    font-size: $h5;
+                    word-spacing: .4rem;
+                }
+                ::placeholder {
+                    color: rgb(141, 134, 134);
+                    font-family: $text_font;
+                    letter-spacing: 0;
+                    font-size: $h5;
+                }
+                button {
+                    border: none;
+                    outline: none;
+                    font-weight: bold;
+                    padding: 0.6rem 2rem;
+                    background: $scoundry;
+                    color: $text;
+                    border-radius: 0 2rem 2rem 0;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 90%;
+        header {
+            button {
+                display: block;
+            }
+        }
+        section {
+            padding: 0;
+            position: relative;
+            div.user_window {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 98%;
+                height: max-content;
+                z-index: 10000;
+                box-shadow: 0 3px 3px 0 rgba(97, 95, 95, 0.864);
+                margin: 0 auto;
+                display: none;
+                border-radius: none;
+            }
+            div.chat_window {
+                border-radius: 0 0 10px 10px;
+                width: 100%;
+                margin-left: 0;
+                div.message {
+                    max-width: 20rem;
+                }
+            }
+        }
+    }
+}
